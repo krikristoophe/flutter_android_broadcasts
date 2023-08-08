@@ -38,6 +38,11 @@ class BroadcastReceiver {
   ///
   /// Throws a [StateError], if it is already listening.
   Future<void> start() async {
+    try {
+      await _BroadcastChannel.instance.stopReceiver(this);
+    } catch (e) {
+      print(e);
+    }
     if (isListening) {
       throw StateError('This BroadcastReceiver is already started.');
     }

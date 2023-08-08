@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_broadcasts/flutter_broadcasts.dart';
+import 'package:flutter_android_broadcasts/flutter_android_broadcasts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
                 print(snapshot.data);
                 switch (snapshot.connectionState) {
                   case ConnectionState.active:
-                    return Text(snapshot.data.name);
+                    return Text(snapshot.data?.name ?? '');
 
                   case ConnectionState.none:
                   case ConnectionState.done:

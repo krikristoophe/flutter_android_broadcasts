@@ -1,7 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_broadcasts/flutter_broadcasts.dart';
+import 'package:flutter_android_broadcasts/flutter_android_broadcasts.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -74,10 +76,12 @@ void main() {
 
     test("stop", () {
       final receiver = BroadcastReceiver(names: <String>["broadcast.name"]);
+      receiver.stop();
     });
 
     test("toMap", () {
       final receiver = BroadcastReceiver(names: <String>["broadcast.name"]);
+      receiver.toMap();
     });
   });
 }
